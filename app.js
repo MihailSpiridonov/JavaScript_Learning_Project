@@ -1,21 +1,21 @@
-// Шаблонные строки
-const projectName = 'Сайт магазина';
-const price = 2000;
-const author = 'Василий Пупкин';
+/*
+Васи положил 12 000$ на вклад 7% годовых с капитализацией 1 раз в месяц. Вывести в консоль, сможет ли он купить дом за 13 500$ через 2 года после снятия вклада. И остаток после покупки.
+Итог = Сумма * (1 + Ставка в месяц не в %) ^ срок в месяцах
+*/
 
-// Вариант 1 без шаблонной строки
-const template = author + ' заказал ' + projectName + ' по цене ' + price + '$';
-console.log(template);
+const depositUSD = 12000;
+const annualRatePercent = 0.07;
+const depositTerm = 24;
+const homeValue = 13500;
 
-// Вариант 1 с шаблонной строкой
-const template2 = `${author} заказал ${projectName} по цене ${price}$`;
-console.log(template2);
+const monthlyRate = annualRatePercent / 12;
+const accumulatedAmount = depositUSD * (1 + monthlyRate) ** depositTerm;
+const cashResidue = accumulatedAmount - homeValue;
+const NotEnoughMoney = homeValue - accumulatedAmount;
 
-// Вариант 2 без шаблонной строки
-const template3 = 'Проект \n' + 'Цена: ' + price + '$';
-console.log(template3);
-
-// Вариант 2 с шаблонной строкой
-const template4 = `Проект
-Цена ${price}$`;
-console.log(template4);
+if (accumulatedAmount > homeValue) {
+    console.log(`Можно купить дом`);
+    console.log(`На депозите осталось ${cashResidue}$`);
+} else {
+    console.log(`На дом нужно ещё накопить ${NotEnoughMoney}$`);
+};
