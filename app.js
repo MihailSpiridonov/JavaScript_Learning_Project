@@ -1,45 +1,19 @@
-// Изучение switch, else if
+/*
+Методом prompt получите ответ пользователя на вопрос "Сколько будет 7 + или - 15?". 
+Если ответ верен, выведите в консоли "Успех", если нет - "Вы робот!", 
+а если он введёт "Я не робот", то тоже "Успех".
+*/ 
 
-const role = 'manager';
+const message = 'Сколько будет 7 + или - 15?';
+const result = prompt(message);
 
-// else if
-console.log('else if');
-if (role === 'manager') {
-    console.log('Менеджер');
-} else if (role === 'admin') {
-    console.log('Админ');
-} else if (role === 'ceo') {
-    console.log('CEO');
-} else {
-    console.log('Мы тебя не знаем!');
-};
-
-// switch
-console.log('switch');
-switch (role) {
-    case 'manager':
-        console.log('Менеджер');
-        break
-    case 'admin':
-        console.log('Админ');
-        break
-    case 'ceo':
-        console.log('CEO');
-        break
+switch (result) {
+    case '22':
+    case '-8':
+    case 'Я не робот':
+    case 'я не робот':
+        console.log('Успех');
+        break;
     default :
-        console.log('Мы тебя не знаем!');
-};
-
-// switch - общие условия
-console.log('switch');
-switch (role) {
-    case 'manager':
-    case 'admin':
-        console.log('Админ');
-        break
-    case 'ceo':
-        console.log('CEO');
-        break
-    default :
-        console.log('Мы тебя не знаем!');
+        console.log('Вы робот!');
 };
