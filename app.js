@@ -29,3 +29,17 @@ switch (role) {
     default :
         console.log('Мы тебя не знаем!');
 };
+
+// switch - общие условия
+console.log('switch');
+switch (role) {
+    case 'manager':
+    case 'admin':
+        console.log('Админ');
+        break
+    case 'ceo':
+        console.log('CEO');
+        break
+    default :
+        console.log('Мы тебя не знаем!');
+};
